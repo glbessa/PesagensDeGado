@@ -1,0 +1,13 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "batch": "Lote",
+  "date": "Data",
+  "description": "Descrição",
+  "scan": "Escanear",
+  "connect": "Conectar",
+  "save": "Salvar",
+  "weighings": "Pesagens"
+}

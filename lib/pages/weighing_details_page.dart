@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
-import 'package:pesagens_de_gado/weighing.dart';
-import 'package:pesagens_de_gado/db.dart';
+import 'package:pesagens_de_gado/models/weighing.dart';
+import 'package:pesagens_de_gado/utils/db.dart';
 import 'package:pesagens_de_gado/weighing_controll.dart';
 
 class WeighingDetailsPage extends StatefulWidget {
@@ -102,4 +102,4 @@ class WeighingDetailsState extends State<WeighingDetailsPage> {
   Widget buildGeneralStats() {
     return Center();
   }
-}
+}*/

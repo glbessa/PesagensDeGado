@@ -1,0 +1,12 @@
+{
+  "helloWorld": "Olá mundo!",
+  "batch": "Lote",
+  "date": "Data",
+  "description": "Descrição",
+  "scan": "Escanear",
+  "connect": "Conectar",
+  "save": "Salvar",
+  "weighings": "Pesagens",
+  "summary": "Resumo",
+  "toWeight": "Pesar"
+}

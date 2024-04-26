@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
-import 'package:pesagens_de_gado/weighing.dart';
+import 'package:pesagens_de_gado/models/weighing.dart';
 import 'package:pesagens_de_gado/weighing_controll.dart';
-import 'package:pesagens_de_gado/weighing_details_page.dart';
-import 'package:pesagens_de_gado/db.dart';
+import 'package:pesagens_de_gado/pages/weighing_details_page.dart';
+import 'package:pesagens_de_gado/utils/db.dart';
 
 class WeighingProcessPage extends StatefulWidget {
   static const String routeName = "/weighingProcess";
@@ -211,4 +211,4 @@ class WeighingProcessState extends State<WeighingProcessPage> {
       ]
     );
   }
-}
+}*/

@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 import 'package:pesagens_de_gado/weighing_controll.dart';
-import 'package:pesagens_de_gado/db.dart';
-import 'package:pesagens_de_gado/weighing_process_page.dart';
+import 'package:pesagens_de_gado/utils/db.dart';
+import 'package:pesagens_de_gado/pages/weighing_process_page.dart';
 
 //https://pub.dev/documentation/flutter_blue/latest/
 //https://medium.com/flutter-community/flutter-for-bluetooth-devices-5594f105b146
@@ -245,4 +245,4 @@ class NewWeighingState extends State<NewWeighingPage> {
   }
 
  */
-}
+}*/

@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:pesagens_de_gado/utils/db.dart';
+import 'package:pesagens_de_gado/models/animal.dart';
+import 'package:pesagens_de_gado/models/weighing.dart';
+
+class AnimalRepository extends ChangeNotifier {
+  late Database db;
+  late Animal _animal;
+  List<Weighing> _weighings = [];
+
+  AnimalRepository(String id) {
+    this._initRepository(id);
+  }
+
+  void _initRepository(String id) async {
+    db = await DB.instance.database;
+    _selectAnimalById(id);
+  }
+
+  void _selectAnimalById(String id) async {
+    List maps = await db.query(
+      Animal.TableName,
+      where: 'id = ?',
+      whereArgs: [id]
+    );
+
+    this._animal = Animal.fromJson(maps.first());
+    this._selectAnimalWeighings();
+
+    notifyListeners();
+  }
+
+  void _selectAnimalWeighings() async {
+    List maps = await db.query(
+      Weighing.TableName,
+      where: 'idAnimal = ?',
+      whereArgs: [this._animal.id]
+    );
+
+    for (Map<String, Object?> map in maps) {
+      this._weighings.add();
+    }
+  }
+
+
+}

@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:pesagens_de_gado/utils/db.dart';
+import 'package:pesagens_de_gado/models/cattle_batch.dart';
+
+class BatchesRepository extends ChangeNotifier {
+  late Database db;
+  List<CattleBatch> _batches = [];
+  List<CattleBatch> get batches => _batches;
+
+  BatchesRepository() {
+    this._initRepository();
+  }
+
+  void _initRepository() async {
+    db = await DB.instance.database;
+    this.selectBatches();
+  }
+
+  void selectBatches() async {
+    List maps = await db.query(CattleBatch.TableName);
+
+    for (Map<String, Object?> map in maps) {
+      this._batches.add(CattleBatch.fromJson(map));
+    }
+    
+    notifyListeners();
+  }
+
+}

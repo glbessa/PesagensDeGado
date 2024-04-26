@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:pesagens_de_gado/models/weighing.dart';
+import 'package:pesagens_de_gado/utils/db.dart';
+
+class WeighingsRepository extends ChangeNotifier {
+    late Database db;
+    List<Weighing> _weighings = [];
+
+    WeighingsRepository() {
+        this._initRepository();
+    }
+
+    void _initRepository() async {
+        db = await DB.instance.database;
+    }
+
+
+
+    Future<Weighing> insertWeighing(Weighing w) async {
+      int id = await db.insert('weighings', w.toJson());
+      w.id = id;
+
+      return w;
+    }
+
+    Future<int> updateWeighing(Weighing w) async {
+      final db = await instance.database;
+
+      return db.update(
+          'weighings',
+          w.toJson(),
+          where: 'id = ?',
+          whereArgs: w.id
+      );
+    }
+
+    Future<int> deleteWeighing(int id) async {
+      final db = await instance.database;
+
+      return db.delete(
+          'weighings',
+          where: 'id = ?',
+          whereArgs: [id]
+      );
+    }
+
+    getWeighings() async {
+      final maps = await db.query(
+          'weighings',
+          where: 'id = ?',
+          whereArgs: [id]
+      );
+
+      if (maps.isNotEmpty) {
+        return Weighing.fromJson(maps.first);
+      }
+
+      return null;
+    }
+}
